@@ -3,6 +3,7 @@ import requests
 import pandas as pd
 import numpy as np
 import difflib
+import csv
 
 
 """
@@ -51,3 +52,6 @@ del i, j, orow, r, registers, row, subset, soup
 
 # Check statistics
 statistics = opencorporates.describe()
+
+# Save dataframe to a CSV-file
+opencorporates.to_csv('ra_opencorporates_gleif.csv', quoting=csv.QUOTE_ALL)
